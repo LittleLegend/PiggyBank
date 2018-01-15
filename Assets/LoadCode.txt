@@ -1,0 +1,6 @@
+public class WolfPanicInfo:MonoBehaviour
+{ 
+    public TextAsset csv;
+
+void Start() {
+     Load(csv); }

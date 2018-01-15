@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piggybank_Tycoon.CSharp", "Piggybank_Tycoon.CSharp.csproj", "{A3A32132-7A43-D3F4-B2C5-41785E1D5F65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piggybank_Tycoon.CSharp.Editor", "Piggybank_Tycoon.CSharp.Editor.csproj", "{4B6BA98C-8E6E-AE0E-E0EF-D78820112A6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3A32132-7A43-D3F4-B2C5-41785E1D5F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A32132-7A43-D3F4-B2C5-41785E1D5F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A32132-7A43-D3F4-B2C5-41785E1D5F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A32132-7A43-D3F4-B2C5-41785E1D5F65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6BA98C-8E6E-AE0E-E0EF-D78820112A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6BA98C-8E6E-AE0E-E0EF-D78820112A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6BA98C-8E6E-AE0E-E0EF-D78820112A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6BA98C-8E6E-AE0E-E0EF-D78820112A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
