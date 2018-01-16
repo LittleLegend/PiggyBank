@@ -41,14 +41,14 @@ public class Factory : MonoBehaviour {
 
     public void createCoin()
     {
-        if (GameData.money>0 && GameData.selectedPiggy.chasingCoin==false) {
+        if (GameData.money>0) {
+
             SoundManager.click.Play();
             GameObject createdCoin = Instantiate(Money, Camera.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-
             createdCoin.transform.position = new Vector3(createdCoin.transform.position.x, createdCoin.transform.position.y, createdCoin.transform.position.z + 10);
             StartCoroutine(sortCoin(createdCoin));
             StartCoroutine(DataLoader.LoadMoneyData(createdCoin.GetComponent<Money>()));
-            GameData.selectedPiggy.StartCoroutine( GameData.selectedPiggy.walkToMoney(createdCoin));
+            GameData.selectedPiggy.ChasedCoins.Add(createdCoin);
             GameData.money -= 1;
 
         }
@@ -157,7 +157,7 @@ public class Factory : MonoBehaviour {
         if (closestPiggy != null)
         {
             closestPiggy.GetComponent<Piggy>().closestCoin = Coin;
-            closestPiggy.GetComponent<Piggy>().walkToMoney(Coin);
+            
         }
         
     }

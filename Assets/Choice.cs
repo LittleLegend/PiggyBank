@@ -9,7 +9,7 @@ public class Choice : MonoBehaviour {
     public string choice;
    public void Yes()
     {
-        Debug.Log("hi");
+
         SceneManager.LoadScene(0);
 
     }

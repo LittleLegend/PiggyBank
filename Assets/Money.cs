@@ -10,6 +10,7 @@ public class Money : MonoBehaviour
     public bool spottet = false;
     public float cost;
     public float taste;
+    public GameObject closestPiggy;
 
     GameData GameData;
     int i;
@@ -24,6 +25,40 @@ public class Money : MonoBehaviour
     {
         
         getEaten();
+    }
+
+    public IEnumerator switchToClosestPiggy(GameObject DeadPiggy)
+    {
+       
+
+        float closest_distance = 1000;
+        float distanceToCoin;
+       
+
+        
+
+        for (int i = 0; i < GameData.Piggys.Count; i++)
+        {
+            Debug.Log(i);
+
+
+            distanceToCoin = Vector2.Distance(GameData.Piggys[i].transform.position, gameObject.transform.position);
+            
+            if (distanceToCoin < closest_distance && GameData.Piggys[i] != DeadPiggy)
+            {
+                
+                closest_distance = distanceToCoin;
+                closestPiggy = GameData.Piggys[i];
+
+            }
+
+          
+            yield return null;
+        }
+        closestPiggy.GetComponent<Piggy>().ChasedCoins.Add(gameObject);
+        
+        
+
     }
 
     public void getEaten()
