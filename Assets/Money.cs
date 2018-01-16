@@ -24,53 +24,63 @@ public class Money : MonoBehaviour
     void Update()
     {
         
-        getEaten();
+     
     }
 
-    public IEnumerator switchToClosestPiggy(GameObject DeadPiggy)
+   
+
+    public void getEaten()
     {
-       
+
+           
+            GameData.Coins.RemoveAt(index);
+            Destroy(gameObject);
+        
+
+    }
+
+
+    public IEnumerator switchToClosestPiggy(GameObject DeadPiggy,int CoinNumber)
+    {
+
 
         float closest_distance = 1000;
         float distanceToCoin;
-       
 
-        
+
+
 
         for (int i = 0; i < GameData.Piggys.Count; i++)
         {
             Debug.Log(i);
 
-
+            if (GameData.Piggys[i] != null)
+           {
             distanceToCoin = Vector2.Distance(GameData.Piggys[i].transform.position, gameObject.transform.position);
-            
+
             if (distanceToCoin < closest_distance && GameData.Piggys[i] != DeadPiggy)
             {
-                
+
                 closest_distance = distanceToCoin;
                 closestPiggy = GameData.Piggys[i];
 
             }
 
-          
+        }
             yield return null;
         }
         closestPiggy.GetComponent<Piggy>().ChasedCoins.Add(gameObject);
-        
-        
 
-    }
-
-    public void getEaten()
-    {
-        if (eaten == true)
+        if (CoinNumber<DeadPiggy.GetComponent<Piggy>().ChasedCoins.Count)
         {
+            Destroy(DeadPiggy);
 
-            GameData.Coins[index] = null;
-            Destroy(gameObject);
         }
+
 
     }
 
    
+
+
 }

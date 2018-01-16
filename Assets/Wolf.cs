@@ -74,6 +74,12 @@ public class Wolf : MonoBehaviour {
  
    
 
+
+
+
+
+    
+
     public IEnumerator walkToPiggy(GameObject Piggy)
     {
         if (Piggy != null )
@@ -164,14 +170,17 @@ public class Wolf : MonoBehaviour {
     public void eatPiggy(Collider2D col)
     {
         if(col.gameObject.tag=="Piggy")
-        {  if (col.gameObject.GetComponent<Piggy>().closestCoin != null)
+        {
+            Piggy Piggy = col.gameObject.GetComponent<Piggy>();
+
+            if (Piggy.closestCoin != null)
             {
-                col.gameObject.GetComponent<Piggy>().closestCoin.GetComponent<Money>().spottet = false;
+                Piggy.closestCoin.GetComponent<Money>().spottet = false;
             }
           
             Factory.StartCoroutine(Factory.resetCanCreateCoin());
             soundManager.growl_eat.Play();
-            Destroy(col.gameObject);
+            Piggy.StartCoroutine(Piggy.switchChasedCoinsToNewPiggy());
             Destroy(gameObject);
 
         }

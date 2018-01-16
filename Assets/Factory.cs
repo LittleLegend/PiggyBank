@@ -46,9 +46,13 @@ public class Factory : MonoBehaviour {
             SoundManager.click.Play();
             GameObject createdCoin = Instantiate(Money, Camera.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
             createdCoin.transform.position = new Vector3(createdCoin.transform.position.x, createdCoin.transform.position.y, createdCoin.transform.position.z + 10);
-            StartCoroutine(sortCoin(createdCoin));
             StartCoroutine(DataLoader.LoadMoneyData(createdCoin.GetComponent<Money>()));
+            StartCoroutine(sortCoin(createdCoin));
             GameData.selectedPiggy.ChasedCoins.Add(createdCoin);
+            GameData.selectedPiggy.StartCoroutine(GameData.selectedPiggy.sortChasedCoins());
+            
+            
+            
             GameData.money -= 1;
 
         }
@@ -126,6 +130,9 @@ public class Factory : MonoBehaviour {
             GameData.panicChecker();
         }
     }
+
+    
+
 
     public IEnumerator lureClosestPiggy(Vector3 Mouse,GameObject Coin)
     {

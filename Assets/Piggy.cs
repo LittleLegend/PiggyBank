@@ -64,7 +64,7 @@ public class Piggy : MonoBehaviour {
         makeLove();
 
         
-       StartCoroutine( walkMoneyPath());
+      
       
 
     }
@@ -102,8 +102,8 @@ public class Piggy : MonoBehaviour {
 
             if (hunger <= 0 && switching ==false)
             {
-                StartCoroutine(switchChasedCoinsToNewPiggy());
-                //Destroy(gameObject);
+                Destroy(gameObject);
+                
             }
 
             if (hunger > 100)
@@ -112,6 +112,69 @@ public class Piggy : MonoBehaviour {
     }
 
 
+    public IEnumerator switchChasedCoinsToNewPiggy()
+    {
+        switching = true;
+        if (ChasedCoins.Count != 0)
+        {
+
+            for (int i = 0; i < ChasedCoins.Count; i++)
+            {
+
+                GameObject Coin = ChasedCoins[i];
+                ChasedCoins[i].GetComponent<Money>().StartCoroutine(ChasedCoins[i].GetComponent<Money>().switchToClosestPiggy(gameObject, i));
+
+                yield return null;
+            }
+        }
+        else { Destroy(gameObject); }
+
+
+    }
+
+        public IEnumerator sortChasedCoins()
+    {
+        if (ChasedCoins.Count != 0){ 
+        for (int c = 0; c < ChasedCoins.Count-1; c++)
+        {
+
+            float closest_distance = 1000;
+            float distanceToCoin=0;
+            GameObject helpCoin;
+
+            for (int i = c; i < ChasedCoins.Count; i++)
+            { 
+
+
+                
+                    distanceToCoin = Vector2.Distance(ChasedCoins[i].transform.position, gameObject.transform.position);
+
+                    if (distanceToCoin < closest_distance )
+                    {
+
+                        closest_distance = distanceToCoin;
+                        helpCoin = ChasedCoins[c];
+                        ChasedCoins[c] = ChasedCoins[i];
+                        ChasedCoins[i] = helpCoin;
+                    }
+                
+                
+                yield return null;
+            }
+            
+        }
+            Debug.Log(Vector2.Distance(ChasedCoins[0].transform.position, gameObject.transform.position));
+            stopPiggy();
+        StartCoroutine(walkMoneyPath());
+            }
+    }
+
+    public void stopPiggy()
+    {
+        StopAllCoroutines();
+        chasingCoin = false;
+
+    }
 
 
     void OnTriggerEnter2D(Collider2D col)
@@ -211,75 +274,65 @@ public class Piggy : MonoBehaviour {
         }
     }
 
-    public IEnumerator switchChasedCoinsToNewPiggy()
-    {   switching =true;
-        if (ChasedCoins.Count != 0)
-        { 
-
-            for (int i = 0; i < ChasedCoins.Count; i++)
-            {
-
-                GameObject Coin= ChasedCoins[i];
-                ChasedCoins[i].GetComponent<Money>().StartCoroutine(ChasedCoins[i].GetComponent<Money>().switchToClosestPiggy(gameObject));
-               
-                yield return null;
-            }
-        }
 
 
-        Destroy(gameObject);
-        
-        
-        
-    }
+
+
+
+
 
     public IEnumerator walkMoneyPath()
-{
-        GameObject Coin;
+    {
+        GameObject Coin = null;
 
+        int count = ChasedCoins.Count;
 
-        if (ChasedCoins.Count!=0 && chasingCoin == false)
+        for (int i = 0; i < count; i++)
         {
-            Coin = ChasedCoins[0];
-           
-            if (Coin.transform.position.x > transform.position.x + gameObject.transform.localScale.x / 2)
+            if (ChasedCoins.Count != 0 && chasingCoin == false)
             {
-                if (gameObject.transform.localScale.x == 1)
+                Coin = ChasedCoins[0];
+
+                if (Coin.transform.position.x > transform.position.x + gameObject.transform.localScale.x / 2)
                 {
-                    gameObject.transform.position = new Vector2(gameObject.transform.position.x + 0.9f, gameObject.transform.position.y);
+                    if (gameObject.transform.localScale.x == 1)
+                    {
+                        gameObject.transform.position = new Vector2(gameObject.transform.position.x + 0.9f, gameObject.transform.position.y);
+                    }
+
+                    gameObject.transform.localScale = new Vector2(-1, gameObject.transform.localScale.y);
+                }
+                else
+                {
+                    if (gameObject.transform.localScale.x == -1)
+                    {
+                        gameObject.transform.position = new Vector2(gameObject.transform.position.x - 0.9f, gameObject.transform.position.y);
+                    }
+                    gameObject.transform.localScale = new Vector2(1, gameObject.transform.localScale.y);
                 }
 
-                gameObject.transform.localScale = new Vector2(-1, gameObject.transform.localScale.y);
-            }
-            else
-            {
-                if (gameObject.transform.localScale.x == -1)
+                Coin.GetComponent<Money>().spottet = true;
+                chasingCoin = true;
+                Vector3 PiggyStartPosition = gameObject.transform.position;
+                Vector3 dir = (Coin.transform.position - PiggyStartPosition).normalized;
+                float distanceToCoinFromStart = Vector2.Distance(Coin.transform.position, PiggyStartPosition);
+                float distanceToCoin = Vector2.Distance(Coin.transform.position, gameObject.transform.position);
+
+
+
+
+                while (distanceToCoin >= 0.01)
                 {
-                    gameObject.transform.position = new Vector2(gameObject.transform.position.x - 0.9f, gameObject.transform.position.y);
+                    distanceToCoin = Vector2.Distance(Coin.transform.position, gameObject.transform.position);
+                    gameObject.transform.position += dir / 100 * speed;
+                    Animator.SetBool("Stand", false);
+
+                    yield return null;
                 }
-                gameObject.transform.localScale = new Vector2(1, gameObject.transform.localScale.y);
+
             }
 
-            Coin.GetComponent<Money>().spottet = true;
-            chasingCoin = true;
-            Vector3 PiggyStartPosition = gameObject.transform.position;
-            Vector3 dir = (Coin.transform.position - PiggyStartPosition).normalized;
-            float distanceToCoinFromStart = Vector2.Distance(Coin.transform.position, PiggyStartPosition);
-            float distanceToCoin = Vector2.Distance(Coin.transform.position, gameObject.transform.position);
-
-
-
-
-            while (distanceToCoin >= 0.01)
-            {
-                distanceToCoin = Vector2.Distance(Coin.transform.position, gameObject.transform.position);
-                gameObject.transform.position += dir / 100 * speed;
-                Animator.SetBool("Stand", false);
-
-                yield return null;
-            }
-
-            Coin.GetComponent<Money>().eaten = true;
+            Coin.GetComponent<Money>().getEaten();
             hunger += Coin.GetComponent<Money>().cost;
             love += Coin.GetComponent<Money>().taste;
             closestCoin = null;
@@ -294,11 +347,11 @@ public class Piggy : MonoBehaviour {
 
             chasingCoin = false;
             Animator.SetBool("Stand", true);
+            
+            yield return null;
         }
-
+        
     }
-   
-   
    
     public void makeLove()
     {
