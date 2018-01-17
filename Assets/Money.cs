@@ -33,7 +33,7 @@ public class Money : MonoBehaviour
     {
 
            
-            GameData.Coins.RemoveAt(index);
+            GameData.Coins.Remove(gameObject);
             Destroy(gameObject);
         
 
@@ -70,7 +70,7 @@ public class Money : MonoBehaviour
             yield return null;
         }
         closestPiggy.GetComponent<Piggy>().ChasedCoins.Add(gameObject);
-
+        closestPiggy.GetComponent<Piggy>().StartCoroutine(closestPiggy.GetComponent<Piggy>().walkMoneyPath());
         if (CoinNumber<DeadPiggy.GetComponent<Piggy>().ChasedCoins.Count)
         {
             Destroy(DeadPiggy);

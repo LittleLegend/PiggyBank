@@ -102,7 +102,8 @@ public class Piggy : MonoBehaviour {
 
             if (hunger <= 0 && switching ==false)
             {
-                Destroy(gameObject);
+                StartCoroutine(switchChasedCoinsToNewPiggy());
+                
                 
             }
 
@@ -163,13 +164,25 @@ public class Piggy : MonoBehaviour {
             }
             
         }
-            Debug.Log(Vector2.Distance(ChasedCoins[0].transform.position, gameObject.transform.position));
+          
             stopPiggy();
-        StartCoroutine(walkMoneyPath());
+            
+            restartCoroutines();
             }
     }
 
-    public void stopPiggy()
+    public void restartCoroutines()
+    {
+        StartCoroutine(walkMoneyPath());
+        StartCoroutine(showHungerTip());
+        StartCoroutine(safeMoney(cooldown));
+        StartCoroutine(getHungry(hungerPerSecond));
+        StartCoroutine(randomizeRoaming(roamingPercent, roamingSeconds));
+        StartCoroutine(oinkPlay());
+
+    }
+
+        public void stopPiggy()
     {
         StopAllCoroutines();
         chasingCoin = false;
@@ -274,13 +287,7 @@ public class Piggy : MonoBehaviour {
         }
     }
 
-
-
-
-
-
-
-
+    
     public IEnumerator walkMoneyPath()
     {
         GameObject Coin = null;
