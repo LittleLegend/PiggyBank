@@ -49,7 +49,7 @@ public class Factory : MonoBehaviour {
             StartCoroutine(DataLoader.LoadMoneyData(createdCoin.GetComponent<Money>()));
             StartCoroutine(sortCoin(createdCoin));
             GameData.selectedPiggy.ChasedCoins.Add(createdCoin);
-            GameData.selectedPiggy.StartCoroutine(GameData.selectedPiggy.sortChasedCoins());
+            GameData.selectedPiggy.handleWalking();
             
             
             
