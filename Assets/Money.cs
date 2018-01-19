@@ -32,8 +32,8 @@ public class Money : MonoBehaviour
     public void getEaten()
     {
 
-           
-            GameData.Coins.Remove(gameObject);
+
+        GameData.Coins.Remove(gameObject);
             Destroy(gameObject);
         
 

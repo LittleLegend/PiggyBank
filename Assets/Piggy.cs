@@ -165,6 +165,7 @@ public class Piggy : MonoBehaviour {
                 }
 
             }
+            StartCoroutine(walkMoneyPath());
         }
 
     
@@ -172,16 +173,17 @@ public class Piggy : MonoBehaviour {
 
     public void handleWalking()
     {
-        StartCoroutine(sortChasedCoins());
-
         stopPiggy();
 
+        StartCoroutine(sortChasedCoins());
+
+        
         restartCoroutines();
     }
 
     public void restartCoroutines()
     {
-        StartCoroutine(walkMoneyPath());
+       
         StartCoroutine(showHungerTip());
         StartCoroutine(safeMoney(cooldown));
         StartCoroutine(getHungry(hungerPerSecond));
