@@ -185,34 +185,13 @@ public class Piggy : MonoBehaviour {
 
     public void handleWalking()
     {
-        stopPiggy();
-
-        restartCoroutines();
-
+        
+        chasingCoin = false;
         StartCoroutine(sortChasedCoins());
 
         
         
     }
-
-    public void restartCoroutines()
-    {
-       
-        StartCoroutine(showHungerTip());
-        StartCoroutine(safeMoney(cooldown));
-        StartCoroutine(getHungry(hungerPerSecond));
-        StartCoroutine(randomizeRoaming(roamingPercent, roamingSeconds));
-        StartCoroutine(oinkPlay());
-
-    }
-
-        public void stopPiggy()
-    {
-        StopAllCoroutines();
-        chasingCoin = false;
-
-    }
-
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -358,27 +337,23 @@ public class Piggy : MonoBehaviour {
                 distanceToCoin = Vector2.Distance(Coin.transform.position, gameObject.transform.position);
                 gameObject.transform.position += dir / 100 * speed;
                 Animator.SetBool("Stand", false);
+                if (chasingCoin == false) { break; }
                 yield return null;
             }
-
-            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Coin", -1);
-            Coin.GetComponent<Money>().getEaten();
-            hunger += Coin.GetComponent<Money>().cost;
-            love += Coin.GetComponent<Money>().taste;
-            closestCoin = null;
-            ChasedCoins.RemoveAt(0);
-
-
-
-            if (GameData.Coins.Count > 0 && Coin.GetComponent<Money>().spottet == true)
+            if (chasingCoin == true)
             {
+                gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Coin", -1);
+                Coin.GetComponent<Money>().getEaten();
+                hunger += Coin.GetComponent<Money>().cost;
+                love += Coin.GetComponent<Money>().taste;
                 closestCoin = null;
-            }
+                ChasedCoins.RemoveAt(0);
 
-            chasingCoin = false;
-            Animator.SetBool("Stand", true);
-            handleWalking();
-            
+
+                chasingCoin = false;
+                Animator.SetBool("Stand", true);
+                handleWalking();
+            }
 
             yield return null;
         }
