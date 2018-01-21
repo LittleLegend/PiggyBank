@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: 4db9d45575080854fb00c7ccb57e9bfd
-timeCreated: 1512427879
+guid: d0ae2a8c30dae49478b6ec276e8d6272
+timeCreated: 1516573095
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Money_Gaint_0
-    21300002: Money_Gaint_1
-    21300004: Money_Gaint_2
-    21300006: Money_Gaint_3
-    21300008: Money_Gaint_4
-    21300010: Money_Gaint_5
-    21300012: Money_Gaint_6
+    21300000: Money_Gaint_Left_0
+    21300002: Money_Gaint_Left_1
+    21300004: Money_Gaint_Left_2
+    21300006: Money_Gaint_Left_3
+    21300008: Money_Gaint_Left_4
+    21300010: Money_Gaint_Left_5
+    21300012: Money_Gaint_Left_6
+  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -64,33 +65,49 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Android
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Money_Gaint_0
+      name: Money_Gaint_Left_0
       rect:
         serializedVersion: 2
         x: 0
@@ -104,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gaint_1
+      name: Money_Gaint_Left_1
       rect:
         serializedVersion: 2
         x: 8
@@ -118,7 +135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gaint_2
+      name: Money_Gaint_Left_2
       rect:
         serializedVersion: 2
         x: 16
@@ -132,7 +149,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gaint_3
+      name: Money_Gaint_Left_3
       rect:
         serializedVersion: 2
         x: 24
@@ -146,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gaint_4
+      name: Money_Gaint_Left_4
       rect:
         serializedVersion: 2
         x: 32
@@ -160,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gaint_5
+      name: Money_Gaint_Left_5
       rect:
         serializedVersion: 2
         x: 40
@@ -174,7 +191,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gaint_6
+      name: Money_Gaint_Left_6
       rect:
         serializedVersion: 2
         x: 48

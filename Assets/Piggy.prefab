@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483320081519788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.458, y: 0.571, z: 0}
+  m_LocalPosition: {x: 0.456, y: 0.534, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224413282192001132}
@@ -324,6 +324,8 @@ MonoBehaviour:
   isRoaming: 0
   searchingCoin: 0
   chasingCoin: 0
+  switching: 0
+  ChasedCoins: []
 --- !u!212 &212299667496853526
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -451,7 +453,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.25, y: 0.5}
+  m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

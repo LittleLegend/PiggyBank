@@ -45,8 +45,7 @@ public class GameData : MonoBehaviour
         loseGame();
        
         updateMoneyField();
-        updateWolfField();
-        updatePiggyField();
+       
 
     }
 

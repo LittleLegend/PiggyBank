@@ -56,20 +56,32 @@ public class Piggy : MonoBehaviour {
 	
 	void Update () {
         
-        if (gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Money_Gain")==true )
-        {
-            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetBool("coin", false);
-        }
+       
         
         makeLove();
+        ResetGain();
 
-        
-      
-      
+
+
+
 
     }
 
-    
+
+    public void ResetGain()
+    {
+        Animator Animator = gameObject.transform.Find("Gain").GetComponentInChildren<Animator>();
+
+        if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Money_Gain_Left") == true || Animator.GetCurrentAnimatorStateInfo(0).IsName("Money_Gain_Right") == true)
+        {
+            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Coin", 0);
+        }
+
+        if (Animator.GetCurrentAnimatorStateInfo(0).IsName("Money_Spend_Left") == true || Animator.GetCurrentAnimatorStateInfo(0).IsName("Money_Spend_Right") == true)
+        {
+            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Coin", 0);
+        }
+    }
 
     public IEnumerator showHungerTip()
     {
@@ -175,10 +187,12 @@ public class Piggy : MonoBehaviour {
     {
         stopPiggy();
 
+        restartCoroutines();
+
         StartCoroutine(sortChasedCoins());
 
         
-        restartCoroutines();
+        
     }
 
     public void restartCoroutines()
@@ -277,7 +291,7 @@ public class Piggy : MonoBehaviour {
 
 
        
-                gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetBool("coin", true);
+                gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Coin", 1);
         
 
         GameData.money += value;
@@ -317,6 +331,7 @@ public class Piggy : MonoBehaviour {
                 }
 
                 gameObject.transform.localScale = new Vector2(-1, gameObject.transform.localScale.y);
+                gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Dir", -1);
             }
             else
             {
@@ -325,6 +340,7 @@ public class Piggy : MonoBehaviour {
                     gameObject.transform.position = new Vector2(gameObject.transform.position.x - 0.9f, gameObject.transform.position.y);
                 }
                 gameObject.transform.localScale = new Vector2(1, gameObject.transform.localScale.y);
+                gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Dir", 1);
             }
 
             Coin.GetComponent<Money>().spottet = true;
@@ -342,12 +358,10 @@ public class Piggy : MonoBehaviour {
                 distanceToCoin = Vector2.Distance(Coin.transform.position, gameObject.transform.position);
                 gameObject.transform.position += dir / 100 * speed;
                 Animator.SetBool("Stand", false);
-
                 yield return null;
             }
 
-
-
+            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Coin", -1);
             Coin.GetComponent<Money>().getEaten();
             hunger += Coin.GetComponent<Money>().cost;
             love += Coin.GetComponent<Money>().taste;
@@ -364,6 +378,7 @@ public class Piggy : MonoBehaviour {
             chasingCoin = false;
             Animator.SetBool("Stand", true);
             handleWalking();
+            
 
             yield return null;
         }
@@ -396,6 +411,7 @@ public class Piggy : MonoBehaviour {
             }
 
             gameObject.transform.localScale = new Vector2(-1, gameObject.transform.localScale.y);
+            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Dir", -1);
             Point = new Vector3(transform.position.x + Random.Range(0, roamingDistance), transform.position.y + Random.Range(-roamingDistance, roamingDistance), 0);
         }
 
@@ -408,7 +424,7 @@ public class Piggy : MonoBehaviour {
                     gameObject.transform.position = new Vector2(gameObject.transform.position.x - 0.9f, gameObject.transform.position.y);
                 }
                 gameObject.transform.localScale = new Vector2(1, gameObject.transform.localScale.y);
-            
+            gameObject.transform.Find("Gain").GetComponentInChildren<Animator>().SetInteger("Dir", 1);
             Point = new Vector3(transform.position.x + Random.Range( -roamingDistance,0), transform.position.y + Random.Range(-roamingDistance, roamingDistance), 0);
         }
 
