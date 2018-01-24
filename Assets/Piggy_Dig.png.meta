@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 2e4599d5d885fbe4da8bcb6499278aad
-timeCreated: 1516662751
+guid: 15daddd8ee01e3d4bb0d75e819e227e6
+timeCreated: 1516834587
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Money_Gain_Right_0
-    21300002: Money_Gain_Right_1
-    21300004: Money_Gain_Right_2
-    21300006: Money_Gain_Right_3
-    21300008: Money_Gain_Right_4
-    21300010: Money_Gain_Right_5
-    21300012: Money_Gain_Right_6
+    21300000: Piggy_Dig_0
+    21300002: Piggy_Dig_1
+    21300004: Piggy_Dig_2
+    21300006: Piggy_Dig_3
+    21300008: Piggy_Dig_4
+    21300010: Piggy_Dig_5
+    21300012: Piggy_Dig_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Money_Gain_Right_0
+      name: Piggy_Dig_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,55 +121,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gain_Right_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Gain_Right_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Gain_Right_3
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Gain_Right_4
+      name: Piggy_Dig_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gain_Right_5
+      name: Piggy_Dig_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,13 +149,55 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gain_Right_6
+      name: Piggy_Dig_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 96
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Piggy_Dig_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Piggy_Dig_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Piggy_Dig_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: 2e4599d5d885fbe4da8bcb6499278aad
-timeCreated: 1516662751
+guid: d4bcb902133ba444fbaf287186bba3f9
+timeCreated: 1516830680
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Money_Gain_Right_0
-    21300002: Money_Gain_Right_1
-    21300004: Money_Gain_Right_2
-    21300006: Money_Gain_Right_3
-    21300008: Money_Gain_Right_4
-    21300010: Money_Gain_Right_5
-    21300012: Money_Gain_Right_6
+    21300000: Truffle_Unearth_0
+    21300002: Truffle_Unearth_1
+    21300004: Truffle_Unearth_2
+    21300006: Truffle_Unearth_3
+    21300008: Truffle_Unearth_4
+    21300010: Truffle_Unearth_5
+    21300012: Truffle_Unearth_6
+    21300014: Truffle_Unearth_7
+    21300016: Truffle_Unearth_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -107,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Money_Gain_Right_0
+      name: Truffle_Unearth_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,55 +123,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gain_Right_1
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Gain_Right_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Gain_Right_3
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 8
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Money_Gain_Right_4
+      name: Truffle_Unearth_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gain_Right_5
+      name: Truffle_Unearth_2
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,13 +151,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Money_Gain_Right_6
+      name: Truffle_Unearth_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 96
         y: 0
-        width: 8
-        height: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Truffle_Unearth_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Truffle_Unearth_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Truffle_Unearth_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Truffle_Unearth_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Truffle_Unearth_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

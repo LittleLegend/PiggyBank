@@ -75,14 +75,7 @@ public class GameData : MonoBehaviour
     public void updateMoneyField()
     { MoneyField.text = money.ToString(); }
 
-    public void updatePiggyField()
-    { PiggyField.text = piggyCount.ToString(); }
-
-    public void updateWolfField()
-    { WolfField.text = slaynWolfs.ToString(); }
-
- 
- 
+    
      
 
     public IEnumerator WolfPanic()
