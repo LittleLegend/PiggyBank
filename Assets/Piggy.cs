@@ -214,14 +214,33 @@ public class Piggy : MonoBehaviour {
         {
             GameData.selectedPiggy = gameObject.GetComponent<Piggy>();
             StartCoroutine(LeadPiggy());
+            StartCoroutine(Unearth());
         }
         
 
     }
 
+    public IEnumerator Unearth()
+    {
+        Truffle Truffle = GameData.Truffles[0].GetComponent<Truffle>();
+        int i = 0;
+        while (Input.GetMouseButton(0))
+        {
+
+            yield return null;
+
+        }
+        if (Truffle.mouseOver == true)
+        {
+            Debug.Log("MEEEEEEP");
+        }
+       
+
+    }
 
     public IEnumerator LeadPiggy()
     {
+        Truffle Truffle = GameData.Truffles[0].GetComponent<Truffle>();
         int i = 0;
         while(Input.GetMouseButton(0))
         {
@@ -229,8 +248,12 @@ public class Piggy : MonoBehaviour {
             yield return null;
                  
         }
-      
-        Factory.createCoin();
+
+        if (Truffle.mouseOver == false)
+        {
+            Factory.createCoin();
+        }
+
 
     }
 

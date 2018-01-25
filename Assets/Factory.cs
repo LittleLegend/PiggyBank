@@ -9,6 +9,7 @@ public class Factory : MonoBehaviour {
     public GameObject Pig;
     public GameObject Wolf;
     public GameObject FirstWolf;
+    public GameObject Truffle;
     public Camera Camera;
     public GameData GameData;
     public Piggy Piggy;
@@ -25,7 +26,7 @@ public class Factory : MonoBehaviour {
 
     void Start () {
         createPiggy(0, 0);
-      
+        createTruffle(1,1);
     }
 	void Update () {
 
@@ -75,6 +76,14 @@ public class Factory : MonoBehaviour {
 
        
     }
+
+    public void createTruffle(float x, float y)
+        {
+        GameObject createdTruffle = Instantiate(Truffle, new Vector2(x, y), Quaternion.identity);
+        GameData.Truffles.Add(createdTruffle);
+    }
+
+
     public IEnumerator sortCoin(GameObject Coin)
     {
         bool sortet = false;

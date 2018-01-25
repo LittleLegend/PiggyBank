@@ -1159,6 +1159,7 @@ MonoBehaviour:
   Pig: {fileID: 1210585967437390, guid: 9dbca3d5c19990849b6504a58c25a6ad, type: 2}
   Wolf: {fileID: 1273207763507476, guid: 93be584bcec70504aaf1a1b2b531efa0, type: 2}
   FirstWolf: {fileID: 1784863223779738, guid: d83fdcd13fd72284aa4a2122f62258e0, type: 2}
+  Truffle: {fileID: 1457334531218198, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
   Camera: {fileID: 283685610}
   GameData: {fileID: 1976926669}
   Piggy: {fileID: 114571450710230478, guid: 9dbca3d5c19990849b6504a58c25a6ad, type: 2}
@@ -1651,91 +1652,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &731480475 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1457334531218198, guid: f72fd467e26ced641ab1761ac67acc36,
-    type: 2}
-  m_PrefabInternal: {fileID: 913146005}
---- !u!95 &731480478
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 731480475}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee34839f49884714891a7f69b98849d4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!1001 &913146005
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2.4814897
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.38074252
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486270425397450, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 212641998740181996, guid: f72fd467e26ced641ab1761ac67acc36,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300004, guid: d4bcb902133ba444fbaf287186bba3f9,
-        type: 3}
-    - target: {fileID: 212641998740181996, guid: f72fd467e26ced641ab1761ac67acc36,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212641998740181996, guid: f72fd467e26ced641ab1761ac67acc36,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212641998740181996, guid: f72fd467e26ced641ab1761ac67acc36,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f72fd467e26ced641ab1761ac67acc36, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1244069216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +1910,7 @@ MonoBehaviour:
   money: 222
   Coins: []
   Piggys: []
+  Truffles: []
   panicPrep: 0
   panic: 0
   piggyCount: 0

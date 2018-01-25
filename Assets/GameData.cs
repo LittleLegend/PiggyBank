@@ -9,6 +9,8 @@ public class GameData : MonoBehaviour
     public float money;
     public List<GameObject> Coins;
     public List<GameObject> Piggys;
+    public List<GameObject> Truffles;
+
     int i;
     public bool panicPrep;
     public bool panic;
